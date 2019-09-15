@@ -6,4 +6,4 @@ class Remote_conForm(forms.ModelForm):
    """
    class Meta:
        model = Remote_con
-       fields =['machine_name', 'vertical_angle', 'horizontal_angle']#'infrared']
+       fields =['machine_name', 'vertical_angle', 'horizontal_angle','infrared']

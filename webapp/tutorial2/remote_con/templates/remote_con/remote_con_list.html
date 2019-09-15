@@ -1,6 +1,7 @@
 <!-- 親テンプレートを読み込む-->
 {% extends 'remote_con/base.html' %}
 {% block content %}
+{% load static %}
  <div class="content-wrapper">
    <div class="container-fluid">
      <!-- パンくずリストの設定-->
@@ -9,7 +10,7 @@
          <a href="{% url 'remote_con:remote_con_list' %}">TOP</a>
        </li>
        <li class="breadcrumb-item">
-         <a href="{% url 'remote_con:remote_con_create' %}">データ登録</a>
+         <a href="{% url 'remote_con:remote_con_form' %}">データ登録</a>
        </li>
      </ol>
      <!--ページタイトル-->
@@ -35,7 +36,8 @@
              <tbody>
                {% for item in object_list %}
                  <tr class="odd gradeX text-center">
-                   <td class="text-center" width="100">{{ item.machine_name }}</td>
+                   <td class="text-center" width="100"><!--{{ item.machine_name }}-->
+                    <input type="button" value="{{ item.machine_name }}" style="width:90%;"></td>
                    <td class="text-center" width="100">{{ item.vertical_angle }}</td>
                    <td class="text-center" width="140">{{ item.horizontal_angle }}</td>
                    <td class="text-center" width="140">{{ item.infrared }}</td>
@@ -45,6 +47,7 @@
                    </td>
                  </tr>
              {% endfor %}
+             <script src="{% static 'sample2.js' %}"></script>
              </tbody>
            　<!-- ここまでが表のデータ部分の表示-->
            </table>

@@ -25,4 +25,4 @@ class Remote_con(models.Model):
    machine_name = models.CharField(verbose_name="機器の名前", max_length=500)
    vertical_angle = models.IntegerField(verbose_name="縦の角度")
    horizontal_angle = models.IntegerField(verbose_name="横の角度")
-   infrared = models.BinaryField(verbose_name="赤外線の値")
+   infrared = models.CharField(verbose_name="赤外線の値", max_length=500)

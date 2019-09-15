@@ -1,7 +1,7 @@
 {% extends 'remote_con/base.html' %}
 {% load bootstrap %}
 {% block content %}
-
+{% load static %}
  <!-- formタグを設定し、postメソッドを指定 -->
  <form method="post">
    <div class="container">
@@ -17,11 +17,14 @@
                <li class="breadcrumb-item active">リモコンアプリ</li>
                <li class="breadcrumb-item active">データ登録</li>
              </ol>
-             <!-- Example DataTables Card-->
+
              <div class="card mb-3">
                <div class="card-header">
                  <i class="fa fa-server"></i> <h3>データ登録画面</h3></div>
+               <!-- データ入力欄 -->
                <div class="card-body">          {{ form |bootstrap}}
+                 <script src="{% static 'sample.js' %}"></script>
+                 </div>
        </div>
      </div>
      <div class="row">
