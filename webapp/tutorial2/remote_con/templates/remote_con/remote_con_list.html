@@ -27,7 +27,7 @@
                  <th class="text-center">機器の名前</th>
                  <th class="text-center">縦の角度</th>
                  <th class="text-center">横の角度</th>
-                 <th class="text-center">赤外線の値</th>
+                 <!-- <th class="text-center">赤外線の値</th> -->
                  <th class="text-center">更新・削除</th>
                </tr>
              </thead>
@@ -37,10 +37,14 @@
                {% for item in object_list %}
                  <tr class="odd gradeX text-center">
                    <td class="text-center" width="100"><!--{{ item.machine_name }}-->
-                   <button type="submit" class="btn btn-default btn-block">{{item.machine_name}}</button>
+                    <button type="submit" class="btn btn-default btn-block operation-button">{{item.machine_name}}</button>
+                    <input type="hidden" class="theta" value="{{ item.vertical_angle }}">
+                    <input type="hidden" class="phi" value="{{ item.horizontal_angle }}">
+                    <input type="hidden" class="data" value="{{ item.infrared }}">
+                   </td>
                    <td class="text-center" width="100">{{ item.vertical_angle }}</td>
                    <td class="text-center" width="140">{{ item.horizontal_angle }}</td>
-                   <td class="text-center" width="140">{{ item.infrared }}</td>
+                   <!-- <td class="text-center" width="140">{{ item.infrared }}</td> -->
                    <td class="text-center" width="140">
                      <a class="btn btn-primary"href="{% url 'remote_con:remote_con_update' item.pk %}" role="button">更新ページ</a>
                      <a class="btn btn-danger" href="{% url 'remote_con:remote_con_delete' item.pk %}" role="button">削除ページ</a>
