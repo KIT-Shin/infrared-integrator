@@ -37,7 +37,7 @@
                {% for item in object_list %}
                  <tr class="odd gradeX text-center">
                    <td class="text-center" width="100"><!--{{ item.machine_name }}-->
-                    <input type="button" value="{{ item.machine_name }}" style="width:90%;"></td>
+                   <button type="submit" class="btn btn-default btn-block">{{item.machine_name}}</button>
                    <td class="text-center" width="100">{{ item.vertical_angle }}</td>
                    <td class="text-center" width="140">{{ item.horizontal_angle }}</td>
                    <td class="text-center" width="140">{{ item.infrared }}</td>
